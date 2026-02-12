@@ -57,9 +57,7 @@ document.title = config.pageTitle;
 window.addEventListener('DOMContentLoaded', () => {
     // Validate configuration first
     validateConfig();
-
-    // Set texts from config
-    document.getElementById('valentineTitle').textContent = `${config.valentineName}, my love...`;
+    document.getElementById('valentineTitle').textContent = config.valentineName;
     
     // Set first question texts
     document.getElementById('question1Text').textContent = config.questions.first.text;
@@ -134,44 +132,28 @@ const loveMeter = document.getElementById('loveMeter');
 const loveValue = document.getElementById('loveValue');
 const extraLove = document.getElementById('extraLove');
 
-function setInitialPosition() {
-    loveMeter.value = 100;
-    loveValue.textContent = 100;
-    loveMeter.style.width = '100%';
-}
+// Love meter functionality (0–100, only 67 works)
+
+const nextBtn = document.getElementById('nextBtn');
+
+// set proper slider range
+loveMeter.min = 0;
+loveMeter.max = 100;
+loveMeter.value = 0;
+
+loveValue.textContent = "0%";
+nextBtn.style.display = "none";
 
 loveMeter.addEventListener('input', () => {
     const value = parseInt(loveMeter.value);
-    loveValue.textContent = value;
-    
-    if (value > 100) {
-        extraLove.classList.remove('hidden');
-        const overflowPercentage = (value - 100) / 9900;
-        const extraWidth = overflowPercentage * window.innerWidth * 0.8;
-        loveMeter.style.width = `calc(100% + ${extraWidth}px)`;
-        loveMeter.style.transition = 'width 0.3s';
-        
-        // Show different messages based on the value
-        if (value >= 5000) {
-            extraLove.classList.add('super-love');
-            extraLove.textContent = config.loveMessages.extreme;
-        } else if (value > 1000) {
-            extraLove.classList.remove('super-love');
-            extraLove.textContent = config.loveMessages.high;
-        } else {
-            extraLove.classList.remove('super-love');
-            extraLove.textContent = config.loveMessages.normal;
-        }
+    loveValue.textContent = value + "%";
+
+    if (value === 67) {
+        nextBtn.style.display = "inline-block";
     } else {
-        extraLove.classList.add('hidden');
-        extraLove.classList.remove('super-love');
-        loveMeter.style.width = '100%';
+        nextBtn.style.display = "none";
     }
 });
-
-// Initialize love meter
-window.addEventListener('DOMContentLoaded', setInitialPosition);
-window.addEventListener('load', setInitialPosition);
 
 // Celebration function
 function celebrate() {
