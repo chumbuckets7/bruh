@@ -7,7 +7,7 @@ const CONFIG = {
     valentineName: "grace, my baby boo 🥹",
 
     // browser tab title
-    pageTitle: "will you be my valentine on february 14th, 2026? 😁",
+    pageTitle: "bruh",
 
     // floating emojis (only the ones you requested)
     floatingEmojis: {
