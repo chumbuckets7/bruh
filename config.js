@@ -25,7 +25,7 @@ const CONFIG = {
         },
         second: {
             text: "how much do you love me?",
-            startText: "this much!",
+            startText: "hint: find the second-degree Taylor polynomial P₂(1) for f(x) = 60e^(x-1) + 7x centered at a = 1.",
             nextBtn: "next ❤️"
         },
         third: {
