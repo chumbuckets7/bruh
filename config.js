@@ -44,7 +44,7 @@ const CONFIG = {
 
     // celebration message when she presses yes on final question
     celebration: {
-        title: "yayyy estoy muy feliz",
+        title: "yayyy estoy muy feliz 🥰🥰🥰",
         message: "also btw, pls shower before we go out",
         emojis: "🤢🤢🤢"
     },
