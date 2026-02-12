@@ -46,7 +46,7 @@ const CONFIG = {
     celebration: {
         title: "yayyy estoy muy feliz",
         message: "also btw, pls shower before we go out",
-        emojis: "😁🥰❤️😽"
+        emojis: "🤢🤢🤢"
     },
 
     // colors (unchanged unless you want different ones)
