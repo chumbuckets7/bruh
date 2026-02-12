@@ -4,7 +4,7 @@
 
 const CONFIG = {
     // valentine's name (shown as just "grace")
-    valentineName: "grace",
+    valentineName: "grace, my baby boo 🥹",
 
     // browser tab title
     pageTitle: "will you be my valentine on february 14th, 2026? 😁",
